@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: be-psizaia
+
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5433/psizaia}
+    username: ${DATABASE_USERNAME:appuser}
+    password: ${DATABASE_PASSWORD:WL1xX21rW1oOh7KgK2FMnLTVw}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/psychologist
+
+server:
+  port: ${SERVER_PORT:8081}
