@@ -2,8 +2,10 @@ package com.psizaia.app.domains;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
+import lombok.Data;
 
 @Embeddable
+@Data
 public class Insurance {
 
 	@Column
@@ -14,30 +16,6 @@ public class Insurance {
 
 	@Column
 	private String insuranceCardNumber;
-
-	public Boolean getHasInsurance() {
-		return hasInsurance;
-	}
-
-	public void setHasInsurance(Boolean hasInsurance) {
-		this.hasInsurance = hasInsurance;
-	}
-
-	public String getInsurancePlan() {
-		return insurancePlan;
-	}
-
-	public void setInsurancePlan(String insurancePlan) {
-		this.insurancePlan = insurancePlan;
-	}
-
-	public String getInsuranceCardNumber() {
-		return insuranceCardNumber;
-	}
-
-	public void setInsuranceCardNumber(String insuranceCardNumber) {
-		this.insuranceCardNumber = insuranceCardNumber;
-	}
 }
 
 
